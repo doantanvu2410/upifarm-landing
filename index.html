@@ -5,792 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#400193" />
 
-  <title>upifarm - Nông sản tuyển chọn theo mùa</title>
+  <title>Upifarm - Nông sản theo mùa, tuyển chọn từ vườn</title>
   <meta
     name="description"
-    content="upifarm tuyển chọn nông sản theo mùa: Musang King, bơ 034, măng cụt và cà phê rang mộc. Website thương hiệu, không bán hàng trực tuyến."
+    content="Upifarm tuyển chọn nông sản theo mùa: Musang King, Black Thorn, Ri6, Monthong, bơ 034, măng cụt và cà phê rang mộc. Không bán đại trà, tập trung vào chất lượng thực tế."
   />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://upifarm.com/" />
 
-  <meta property="og:title" content="upifarm - Nông sản tuyển chọn theo mùa" />
+  <meta property="og:title" content="Upifarm - Nông sản theo mùa, tuyển chọn từ vườn" />
   <meta
     property="og:description"
-    content="Thương hiệu nông sản Việt cao cấp, tập trung vào niềm tin, mùa vụ và liên hệ trực tiếp qua Zalo/Facebook."
+    content="Thương hiệu nông sản tuyển chọn theo mùa, minh bạch nguồn gốc, tư vấn trực tiếp và không bán hàng đại trà."
   />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="vi_VN" />
 
   <link rel="icon" href="assets/logo-upifarm.svg" type="image/svg+xml" />
-  <style>
-:root {
-  --forest: #400193;
-  --forest-2: #16002d;
-  --leaf: #6a37c2;
-  --moss: #d7b8ff;
-  --cream: #fff1d6;
-  --paper: #fffaf0;
-  --harvest: #ffb200;
-  --durian: #e7c75a;
-  --avocado: #8aa35e;
-  --mangosteen: #5b264d;
-  --coffee: #5a3326;
-  --ink: #21064a;
-  --muted: rgba(245, 234, 215, 0.72);
-  --muted-dark: rgba(33, 6, 74, 0.68);
-  --line: rgba(245, 234, 215, 0.18);
-  --line-dark: rgba(33, 6, 74, 0.12);
-  --shadow: 0 30px 90px rgba(22, 0, 45, 0.38);
-  --max: 1180px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(255, 178, 0, 0.26), transparent 26rem),
-    radial-gradient(circle at 88% 4%, rgba(106, 55, 194, 0.3), transparent 22rem),
-    linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 58%, #0b0017 100%);
-  color: var(--cream);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(245, 234, 215, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 234, 215, 0.024) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: linear-gradient(to bottom, black, transparent 75%);
-}
-
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-}
-
-.skip-link {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  z-index: 200;
-  transform: translateY(-160%);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--forest);
-  padding: 0.7rem 1rem;
-  font-weight: 800;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-.site-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: min(100% - 2rem, var(--max));
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.site-header::before {
-  content: "";
-  position: absolute;
-  inset: 0 -1rem;
-  z-index: -1;
-  border-bottom: 1px solid transparent;
-  background: transparent;
-  transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
-}
-
-.site-header.is-scrolled::before,
-.site-header.is-open::before {
-  border-color: var(--line);
-  background: rgba(22, 0, 45, 0.82);
-  backdrop-filter: blur(18px);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  color: var(--cream);
-  font-size: 1.02rem;
-  font-weight: 820;
-  letter-spacing: -0.025em;
-  text-decoration: none;
-}
-
-.brand img {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
-}
-
-.menu-button {
-  display: inline-grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(245, 234, 215, 0.08);
-  cursor: pointer;
-}
-
-.menu-button span {
-  width: 1.15rem;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--cream);
-  transition: transform 0.2s ease;
-}
-
-.menu-button span + span {
-  margin-top: -0.55rem;
-}
-
-.menu-button[aria-expanded="true"] span:first-child {
-  transform: translateY(0.28rem) rotate(45deg);
-}
-
-.menu-button[aria-expanded="true"] span:last-child {
-  transform: translateY(-0.28rem) rotate(-45deg);
-}
-
-.site-nav {
-  position: fixed;
-  inset: 4.85rem 1rem auto;
-  display: grid;
-  gap: 0.2rem;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(22, 0, 45, 0.97);
-  box-shadow: var(--shadow);
-  padding: 0.8rem;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-0.6rem);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.site-nav.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.site-nav a {
-  border-radius: 999px;
-  color: rgba(245, 234, 215, 0.78);
-  padding: 0.85rem 1rem;
-  font-size: 0.94rem;
-  font-weight: 760;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  background: rgba(245, 234, 215, 0.08);
-  color: var(--paper);
-}
-
-.site-nav .nav-action {
-  background: var(--paper);
-  color: var(--forest);
-}
-
-.hero,
-.section,
-.site-footer {
-  width: min(100% - 2rem, var(--max));
-  margin: 0 auto;
-}
-
-.hero {
-  display: grid;
-  gap: 3rem;
-  min-height: 100svh;
-  padding: 7.4rem 0 4rem;
-  align-items: center;
-}
-
-.eyebrow,
-.section-kicker {
-  margin: 0 0 1rem;
-  color: var(--harvest);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3 {
-  letter-spacing: -0.052em;
-  line-height: 0.96;
-}
-
-h1 {
-  max-width: 11ch;
-  margin-bottom: 1.35rem;
-  font-size: clamp(3.45rem, 13.5vw, 7.5rem);
-}
-
-h2 {
-  margin-bottom: 1.2rem;
-  font-size: clamp(2.35rem, 9vw, 5rem);
-}
-
-h3 {
-  margin-bottom: 0.8rem;
-  font-size: clamp(1.45rem, 5vw, 2.15rem);
-}
-
-.hero-lead,
-.text-stack p,
-.produce-card p,
-.contact-shell p {
-  color: var(--muted);
-  font-size: clamp(1.03rem, 2.6vw, 1.26rem);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 2rem;
-}
-
-.button,
-.contact-actions a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.25rem;
-  border-radius: 999px;
-  padding: 0.9rem 1.15rem;
-  font-weight: 850;
-  text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-
-.button:hover,
-.contact-actions a:hover {
-  transform: translateY(-2px);
-}
-
-.button-primary {
-  background: var(--paper);
-  color: var(--forest);
-}
-
-.button-secondary {
-  border: 1px solid var(--line);
-  background: rgba(245, 234, 215, 0.08);
-  color: var(--cream);
-}
-
-.hero-visual {
-  min-height: 30rem;
-}
-
-.editorial-frame {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 30rem;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 25% 24%, rgba(255, 178, 0, 0.28), transparent 22rem),
-    radial-gradient(circle at 80% 72%, rgba(106, 55, 194, 0.3), transparent 20rem),
-    linear-gradient(145deg, rgba(245, 234, 215, 0.12), rgba(245, 234, 215, 0.04));
-  box-shadow: var(--shadow);
-}
-
-.hero-photo {
-  position: absolute;
-  z-index: 1;
-  width: 44%;
-  aspect-ratio: 4 / 3;
-  border: 1px solid rgba(245, 234, 215, 0.2);
-  border-radius: 28px;
-  object-fit: cover;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
-  filter: saturate(0.88) contrast(0.96);
-}
-
-.hero-photo-durian {
-  right: 6%;
-  top: 8%;
-}
-
-.hero-photo-avocado {
-  left: 7%;
-  bottom: 9%;
-}
-
-.hero-photo-mangosteen {
-  left: 12%;
-  top: 13%;
-  width: 29%;
-}
-
-.hero-card {
-  position: relative;
-  z-index: 3;
-  width: min(80%, 21rem);
-  border: 1px solid rgba(245, 234, 215, 0.25);
-  border-radius: 28px;
-  background: rgba(22, 0, 45, 0.76);
-  padding: 1.4rem;
-  backdrop-filter: blur(14px);
-}
-
-.hero-card img {
-  width: 5.2rem;
-  height: 5.2rem;
-  border-radius: 22px;
-  margin-bottom: 3.5rem;
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
-}
-
-.hero-card span {
-  display: block;
-  margin-bottom: 0.9rem;
-  color: var(--harvest);
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero-card strong {
-  display: block;
-  max-width: 13rem;
-  font-size: 1.65rem;
-  letter-spacing: -0.045em;
-  line-height: 1;
-}
-
-.signal-bar {
-  display: grid;
-  grid-template-columns: 1fr;
-  border-block: 1px solid var(--line);
-  background: rgba(245, 234, 215, 0.04);
-}
-
-.signal-bar span {
-  border-bottom: 1px solid var(--line);
-  padding: 1rem;
-  color: var(--harvest);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.section {
-  padding: clamp(4.8rem, 12vw, 8.4rem) 0;
-}
-
-.philosophy-grid,
-.season,
-.contact-shell {
-  display: grid;
-  gap: 2rem;
-}
-
-.text-stack {
-  max-width: 42rem;
-}
-
-.text-stack p + p {
-  margin-top: 1rem;
-}
-
-.produce {
-  border-top: 1px solid var(--line);
-}
-
-.section-heading {
-  max-width: 50rem;
-  margin-bottom: 2rem;
-}
-
-.produce-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.produce-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: rgba(245, 234, 215, 0.07);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
-}
-
-.produce-media {
-  position: relative;
-  margin: 0;
-  min-height: 16rem;
-  overflow: hidden;
-  background: rgba(245, 234, 215, 0.08);
-}
-
-.produce-media img {
-  width: 100%;
-  height: 100%;
-  min-height: 16rem;
-  object-fit: cover;
-  filter: saturate(0.9) contrast(0.96);
-  transition: transform 0.6s ease;
-}
-
-.produce-card:hover .produce-media img {
-  transform: scale(1.045);
-}
-
-.produce-media figcaption {
-  position: absolute;
-  left: 0.8rem;
-  bottom: 0.8rem;
-  border: 1px solid rgba(245, 234, 215, 0.18);
-  border-radius: 999px;
-  background: rgba(22, 0, 45, 0.68);
-  color: rgba(245, 234, 215, 0.82);
-  padding: 0.35rem 0.55rem;
-  font-size: 0.66rem;
-  font-weight: 760;
-  backdrop-filter: blur(10px);
-}
-
-.produce-content {
-  padding: 1.25rem;
-}
-
-.produce-content span {
-  display: block;
-  margin-bottom: 1.4rem;
-  color: var(--harvest);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.produce-card p {
-  margin-bottom: 0;
-}
-
-.standards {
-  border-block: 1px solid var(--line);
-}
-
-.standards-panel,
-.contact-shell {
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 84% 12%, rgba(255, 178, 0, 0.2), transparent 22rem),
-    radial-gradient(circle at 16% 90%, rgba(106, 55, 194, 0.22), transparent 20rem),
-    rgba(245, 234, 215, 0.07);
-  box-shadow: var(--shadow);
-  padding: clamp(1.35rem, 5vw, 3.25rem);
-}
-
-.standards-panel h2 {
-  max-width: 50rem;
-}
-
-.standards-list {
-  display: grid;
-  gap: 0.8rem;
-  margin-top: 2rem;
-}
-
-.standards-list div,
-.season-board div {
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-}
-
-.standards-list strong,
-.season-board b {
-  display: block;
-  margin-bottom: 0.45rem;
-  color: var(--harvest);
-}
-
-.standards-list span,
-.season-board span {
-  color: var(--muted);
-  font-weight: 720;
-}
-
-.season-copy {
-  max-width: 50rem;
-}
-
-.season-board {
-  display: grid;
-  gap: 1rem;
-  border-radius: 30px;
-  background: var(--paper);
-  color: var(--ink);
-  padding: clamp(1.25rem, 4vw, 2rem);
-}
-
-.season-board div {
-  border-color: var(--line-dark);
-}
-
-.season-board span {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--muted-dark);
-}
-
-.season-board b {
-  color: var(--ink);
-  font-size: 1.35rem;
-  letter-spacing: -0.04em;
-  line-height: 1.08;
-}
-
-.contact-shell p {
-  max-width: 42rem;
-}
-
-.business-info {
-  display: grid;
-  gap: 0.45rem;
-  margin-top: 1.6rem;
-  border-left: 2px solid var(--harvest);
-  padding-left: 1rem;
-  color: var(--muted);
-  font-style: normal;
-}
-
-.business-info strong {
-  color: var(--cream);
-  font-size: 1.02rem;
-}
-
-.business-info a {
-  color: var(--cream);
-  font-weight: 850;
-  text-decoration-color: rgba(255, 178, 0, 0.6);
-  text-underline-offset: 0.18rem;
-}
-
-.contact-actions {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.contact-actions a {
-  border: 1px solid var(--line);
-  background: rgba(245, 234, 215, 0.08);
-  color: var(--cream);
-}
-
-.contact-actions a:first-child {
-  background: var(--paper);
-  color: var(--forest);
-}
-
-.source-note {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  width: min(100% - 2rem, var(--max));
-  margin: 0 auto;
-  border-top: 1px solid var(--line);
-  padding: 1.25rem 0;
-  color: rgba(245, 234, 215, 0.62);
-  font-size: 0.78rem;
-}
-
-.source-note span {
-  color: var(--harvest);
-  font-weight: 850;
-}
-
-.source-note a {
-  color: rgba(245, 234, 215, 0.72);
-  text-underline-offset: 0.18rem;
-}
-
-.site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid var(--line);
-  padding: 2rem 0;
-}
-
-.site-footer p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.site-footer a:not(.brand) {
-  color: var(--cream);
-  font-weight: 820;
-  text-decoration-color: rgba(255, 178, 0, 0.55);
-  text-underline-offset: 0.18rem;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(1.25rem);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (min-width: 680px) {
-  .signal-bar {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .signal-bar span {
-    border-bottom: 0;
-    border-right: 1px solid var(--line);
-  }
-
-  .produce-grid,
-  .season-board {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .standards-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 980px) {
-  .menu-button {
-    display: none;
-  }
-
-  .site-nav {
-    position: static;
-    display: flex;
-    align-items: center;
-    gap: 0.15rem;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-  }
-
-  .site-nav a {
-    padding: 0.7rem 0.85rem;
-  }
-
-  .site-nav .nav-action {
-    margin-left: 0.25rem;
-    padding-inline: 1rem;
-  }
-
-  .hero,
-  .philosophy-grid,
-  .season,
-  .contact-shell {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-  .hero {
-    padding-top: 8rem;
-  }
-
-  .editorial-frame {
-    min-height: 40rem;
-  }
-
-  .produce-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .produce-card {
-    display: grid;
-    grid-template-rows: 16rem 1fr;
-  }
-
-  .produce-card:nth-child(even) {
-    transform: translateY(2.25rem);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-</style>
+  <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
     {
@@ -817,7 +49,7 @@ h3 {
   <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
 
   <header class="site-header" data-header>
-    <a class="brand" href="#home" aria-label="upifarm home">
+    <a class="brand" href="#home" aria-label="Về trang đầu Upifarm">
       <img src="assets/logo-upifarm.svg" alt="" width="44" height="44" />
       <span>upifarm</span>
     </a>
@@ -828,10 +60,10 @@ h3 {
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
-      <a href="#philosophy">Triết lý</a>
+      <a href="#story">Câu chuyện</a>
+      <a href="#values">Giá trị</a>
       <a href="#produce">Sản phẩm</a>
-      <a href="#standards">Tiêu chuẩn</a>
-      <a href="#season">Mùa vụ</a>
+      <a href="#journal">Nhật ký</a>
       <a href="#contact" class="nav-action">Liên hệ</a>
     </nav>
   </header>
@@ -839,23 +71,30 @@ h3 {
   <main id="main">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Vietnamese seasonal produce</p>
-        <h1 id="hero-title">Nông sản theo mùa, tuyển chọn như một món quà.</h1>
+        <p class="eyebrow">Hộ kinh doanh Upifarm</p>
+        <h1 id="hero-title">Nông sản theo mùa, tuyển chọn từ vườn.</h1>
         <p class="hero-lead">
-          upifarm kết nối khách hàng với những vụ mùa đáng tin: Musang King, bơ 034,
-          măng cụt và cà phê rang mộc. Không giỏ hàng. Không ồn ào. Chỉ có chất lượng,
-          câu chuyện rõ ràng và tư vấn trực tiếp.
+          Chúng tôi tìm kiếm những mùa vụ thực sự đáng giá. Từ Musang King, Black Thorn,
+          Ri6, Monthong cho đến bơ 034, măng cụt và cà phê rang mộc, mỗi sản phẩm đều
+          được lựa chọn dựa trên chất lượng thực tế thay vì số lượng.
+        </p>
+        <p class="hero-statement">
+          Không bán đại trà. Không chạy theo xu hướng. Chỉ tập trung vào những sản phẩm
+          mà chúng tôi sẵn sàng giới thiệu cho gia đình và bạn bè của mình.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://zalo.me/0334338006" target="_blank" rel="noopener">Nhắn Zalo</a>
-          <a class="button button-secondary" href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">Facebook</a>
+          <a class="button button-primary" href="#produce">Khám phá sản phẩm</a>
+          <a class="button button-secondary" href="https://zalo.me/0334338006" target="_blank" rel="noopener">Liên hệ ngay</a>
         </div>
+        <p class="product-line">
+          Musang King · Black Thorn · Ri6 · Monthong · Bơ 034 · Măng cụt · Cà phê rang mộc
+        </p>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Bộ sản phẩm nông sản upifarm">
+      <div class="hero-visual reveal" aria-label="Hình ảnh sản phẩm Upifarm">
         <div class="editorial-frame">
           <img
-            class="hero-photo hero-photo-durian"
+            class="hero-photo hero-photo-main"
             src="assets/musang-king.jpg"
             alt="Sầu riêng Musang King bổ đôi, phần cơm vàng"
             width="1280"
@@ -863,15 +102,7 @@ h3 {
             loading="eager"
           />
           <img
-            class="hero-photo hero-photo-avocado"
-            src="assets/avocado.jpg"
-            alt="Quả bơ nguyên trái và bổ đôi"
-            width="1600"
-            height="1066"
-            loading="eager"
-          />
-          <img
-            class="hero-photo hero-photo-mangosteen"
+            class="hero-photo hero-photo-side"
             src="assets/mangosteen.jpg"
             alt="Măng cụt nguyên trái và tách múi"
             width="1600"
@@ -879,161 +110,227 @@ h3 {
             loading="eager"
           />
           <div class="hero-card">
-            <img src="assets/logo-upifarm.svg" alt="Logo upifarm" width="110" height="110" />
+            <img src="assets/logo-upifarm.svg" alt="Logo Upifarm" width="120" height="120" />
             <span>Selected by season</span>
-            <strong>Musang King · Bơ 034 · Măng cụt · Cà phê rang mộc</strong>
+            <strong>Không bán mọi thứ. Chỉ chọn mùa vụ đáng tin.</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="signal-bar" aria-label="Thông điệp thương hiệu">
-      <span>Tuyển chọn theo mùa</span>
-      <span>Nguồn gốc rõ</span>
-      <span>Tư vấn trực tiếp</span>
-      <span>Không ecommerce</span>
+    <section class="signal-bar" aria-label="Điểm tin cậy">
+      <span>Theo mùa</span>
+      <span>Tuyển chọn</span>
+      <span>Minh bạch</span>
+      <span>Tận tâm</span>
     </section>
 
-    <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
-      <div class="section-kicker reveal">Định hướng thương hiệu</div>
-      <div class="philosophy-grid">
-        <h2 id="philosophy-title" class="reveal">Premium không nằm ở sự phô trương. Premium nằm ở sự yên tâm.</h2>
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="section-kicker reveal">Chúng tôi không bán mọi thứ</div>
+      <div class="story-grid">
+        <h2 id="story-title" class="reveal">Điều khó không phải là mua trái cây. Điều khó là biết sản phẩm đó có thật sự xứng đáng hay không.</h2>
         <div class="text-stack reveal">
           <p>
-            Với upifarm, website nên giống một cuốn lookbook của mùa vụ hơn là một shop online.
-            Ít thông tin nhưng đúng trọng tâm: sản phẩm gì, vì sao đáng tin, liên hệ ở đâu.
+            Ngày nay, việc mua một loại trái cây không còn khó. Điều khó hơn là biết được
+            sản phẩm đó đến từ đâu, được chăm sóc như thế nào và có thực sự xứng đáng với
+            số tiền bạn bỏ ra hay không.
           </p>
           <p>
-            Hệ thiết kế phát triển từ logo Upifarm: tím thương hiệu, vàng nhận diện,
-            kem giấy và các sắc nông sản tự nhiên. Sắc thái đủ sang, nhưng vẫn ấm và gần đất.
+            Upifarm được hình thành từ những chuyến đi thực tế đến vùng trồng, những cuộc
+            gặp gỡ với nhà vườn và quá trình tìm kiếm những mùa vụ chất lượng. Chúng tôi
+            không cố gắng trở thành nơi bán nhiều sản phẩm nhất.
+          </p>
+          <p>
+            Chúng tôi muốn trở thành nơi khách hàng có thể tin tưởng khi tìm kiếm những sản phẩm
+            được tuyển chọn kỹ lưỡng.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="section values" id="values" aria-labelledby="values-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Giá trị cốt lõi</p>
+        <h2 id="values-title">Niềm tin được xây dựng từ cách lựa chọn, không phải từ lời quảng cáo.</h2>
+      </div>
+      <div class="value-grid">
+        <article class="value-card reveal">
+          <span>01</span>
+          <h3>Theo mùa</h3>
+          <p>Nông sản ngon nhất là nông sản đúng mùa. Mỗi sản phẩm chỉ được giới thiệu khi đạt chất lượng tốt về hương vị và độ chín.</p>
+        </article>
+        <article class="value-card reveal">
+          <span>02</span>
+          <h3>Tuyển chọn</h3>
+          <p>Không phải tất cả sản phẩm từ cùng một vùng trồng đều giống nhau. Chúng tôi khảo sát, đánh giá và chọn lô hàng phù hợp.</p>
+        </article>
+        <article class="value-card reveal">
+          <span>03</span>
+          <h3>Minh bạch</h3>
+          <p>Nguồn gốc rõ ràng. Hình ảnh thực tế. Thông tin trung thực. Những gì bạn nhìn thấy là những gì chúng tôi thực sự cung cấp.</p>
+        </article>
+        <article class="value-card reveal">
+          <span>04</span>
+          <h3>Tận tâm</h3>
+          <p>Chúng tôi tư vấn để khách hàng lựa chọn được sản phẩm phù hợp nhất với nhu cầu sử dụng hoặc biếu tặng.</p>
+        </article>
       </div>
     </section>
 
     <section class="section produce" id="produce" aria-labelledby="produce-title">
       <div class="section-heading reveal">
-        <p class="eyebrow">Selected harvest</p>
-        <h2 id="produce-title">Bốn nhóm sản phẩm, một chuẩn tuyển chọn.</h2>
+        <p class="eyebrow">Danh mục sản phẩm</p>
+        <h2 id="produce-title">Tập trung vào những sản phẩm có mùa vụ và câu chuyện rõ ràng.</h2>
       </div>
 
       <div class="produce-grid">
-        <article class="produce-card card-durian reveal">
+        <article class="produce-card reveal">
           <figure class="produce-media">
-            <img
-              src="assets/musang-king.jpg"
-              alt="Cận cảnh sầu riêng Musang King"
-              width="1280"
-              height="960"
-              loading="lazy"
-            />
-            <figcaption>Wikimedia Commons</figcaption>
+            <img src="assets/musang-king.jpg" alt="Cận cảnh sầu riêng Musang King" width="1280" height="960" loading="lazy" />
+            <figcaption>Sầu riêng tuyển chọn</figcaption>
           </figure>
           <div class="produce-content">
-            <span>01 · Trái cây cao cấp</span>
-            <h3>Sầu riêng Musang King</h3>
-            <p>Cơm vàng, vị béo, chọn theo mùa và tư vấn trước khi giao.</p>
+            <span>01 · Cao cấp</span>
+            <h3>Sầu riêng tuyển chọn</h3>
+            <p>Những giống sầu riêng nổi tiếng được lựa chọn từ các vùng trồng chất lượng tại Việt Nam và Malaysia.</p>
+            <ul class="produce-list">
+              <li>Musang King</li>
+              <li>Black Thorn</li>
+              <li>Ri6</li>
+              <li>Monthong</li>
+            </ul>
           </div>
         </article>
 
-        <article class="produce-card card-avocado reveal">
+        <article class="produce-card reveal">
           <figure class="produce-media">
-            <img
-              src="assets/avocado.jpg"
-              alt="Bơ nguyên trái và bơ bổ đôi"
-              width="1600"
-              height="1066"
-              loading="lazy"
-            />
-            <figcaption>Wikimedia Commons</figcaption>
+            <img src="assets/avocado.jpg" alt="Bơ nguyên trái và bơ bổ đôi" width="1600" height="1066" loading="lazy" />
+            <figcaption>Trái cây theo mùa</figcaption>
           </figure>
           <div class="produce-content">
             <span>02 · Vườn Việt</span>
             <h3>Bơ 034</h3>
-            <p>Dáng dài đặc trưng, thịt dẻo, phù hợp khách thích sản phẩm sạch và tiện dùng.</p>
+            <p>Bơ 034 có dáng dài đặc trưng, tỷ lệ thịt cao và hương vị béo nhẹ tự nhiên.</p>
+            <ul class="produce-list">
+              <li>Chọn độ chín phù hợp</li>
+              <li>Ưu tiên lô hàng ổn định</li>
+            </ul>
           </div>
         </article>
 
-        <article class="produce-card card-mangosteen reveal">
+        <article class="produce-card reveal">
           <figure class="produce-media">
-            <img
-              src="assets/mangosteen.jpg"
-              alt="Măng cụt nguyên trái và măng cụt tách múi"
-              width="1600"
-              height="1066"
-              loading="lazy"
-            />
-            <figcaption>Wikimedia Commons</figcaption>
+            <img src="assets/mangosteen.jpg" alt="Măng cụt nguyên trái và măng cụt tách múi" width="1600" height="1066" loading="lazy" />
+            <figcaption>Trái cây nhiệt đới</figcaption>
           </figure>
           <div class="produce-content">
             <span>03 · Theo mùa</span>
             <h3>Măng cụt</h3>
-            <p>Ưu tiên độ tươi, độ chín và cảm giác quà biếu nhẹ nhàng.</p>
+            <p>Măng cụt được thu hoạch theo mùa, lựa chọn dựa trên độ tươi và chất lượng thực tế.</p>
+            <ul class="produce-list">
+              <li>Múi trắng</li>
+              <li>Vị ngọt thanh</li>
+            </ul>
           </div>
         </article>
 
-        <article class="produce-card card-coffee reveal">
+        <article class="produce-card reveal">
           <figure class="produce-media">
-            <img
-              src="assets/roasted-coffee.jpg"
-              alt="Hạt cà phê rang mộc"
-              width="1600"
-              height="1200"
-              loading="lazy"
-            />
-            <figcaption>Wikimedia Commons</figcaption>
+            <img src="assets/roasted-coffee.jpg" alt="Hạt cà phê rang mộc" width="1600" height="1200" loading="lazy" />
+            <figcaption>Cà phê rang mộc</figcaption>
           </figure>
           <div class="produce-content">
-            <span>04 · Rang mộc</span>
+            <span>04 · Nguyên bản</span>
             <h3>Cà phê rang mộc</h3>
-            <p>Gu cà phê thật, rõ hương, không cần kể quá nhiều để tạo lòng tin.</p>
+            <p>Cà phê ngon không cần quá nhiều sự can thiệp. Hạt được tuyển chọn và rang để giữ lại hương vị nguyên bản.</p>
+            <ul class="produce-list">
+              <li>Không hương liệu</li>
+              <li>Không phụ gia</li>
+            </ul>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section standards" id="standards" aria-labelledby="standards-title">
+    <section class="section durian" aria-labelledby="durian-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Sầu riêng tuyển chọn</p>
+        <h2 id="durian-title">Không phải mọi trái sầu riêng đều giống nhau.</h2>
+      </div>
+      <div class="variety-grid">
+        <article class="variety-card reveal">
+          <h3>Musang King</h3>
+          <p>Vua của các giống sầu riêng Malaysia, nổi tiếng với cơm vàng đậm, mềm mịn và vị béo ngậy đặc trưng.</p>
+        </article>
+        <article class="variety-card reveal">
+          <h3>Black Thorn</h3>
+          <p>Một trong những giống sầu riêng cao cấp nhất Malaysia, có cơm cam vàng, vị ngọt sâu và hậu vị phức hợp.</p>
+        </article>
+        <article class="variety-card reveal">
+          <h3>Ri6</h3>
+          <p>Niềm tự hào của sầu riêng Việt Nam, nổi bật với cơm vàng đẹp, hạt lép và hương vị cân bằng.</p>
+        </article>
+        <article class="variety-card reveal">
+          <h3>Monthong</h3>
+          <p>Giống sầu riêng phổ biến của Thái Lan, có múi lớn, cơm dày, vị ngọt dịu và kết cấu chắc.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section journal" id="journal" aria-labelledby="journal-title">
+      <div class="journal-panel reveal">
+        <p class="eyebrow">Nhật ký mùa vụ</p>
+        <h2 id="journal-title">Những câu chuyện phía sau mỗi mùa thu hoạch.</h2>
+        <p>
+          Từ những chuyến đi khảo sát vùng trồng đến những trải nghiệm thực tế cùng nhà vườn,
+          chúng tôi chia sẻ hành trình tìm kiếm những sản phẩm chất lượng.
+        </p>
+        <ul class="journal-list">
+          <li>Một ngày tuyển chọn Musang King chín rụng.</li>
+          <li>Black Thorn khác gì Musang King.</li>
+          <li>Thị trường sầu riêng Đài Loan nhìn nhận sản phẩm Việt Nam ra sao.</li>
+          <li>Mùa măng cụt bắt đầu như thế nào.</li>
+          <li>Hành trình từ vườn đến tay khách hàng.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section standards" aria-labelledby="standards-title">
       <div class="standards-panel reveal">
-        <p class="eyebrow">Trust system</p>
-        <h2 id="standards-title">Một website để khách thấy thương hiệu làm việc nghiêm túc.</h2>
+        <p class="eyebrow">Cam kết</p>
+        <h2 id="standards-title">Điều chúng tôi luôn giữ.</h2>
         <div class="standards-list">
           <div>
             <strong>01</strong>
-            <span>Chọn sản phẩm theo mùa vụ, không cam kết đại trà quanh năm.</span>
+            <span>Không chạy theo sản lượng.</span>
           </div>
           <div>
             <strong>02</strong>
-            <span>Giao tiếp rõ ràng về chất lượng, nguồn hàng và thời điểm phù hợp.</span>
+            <span>Không bán sản phẩm ngoài mùa.</span>
           </div>
           <div>
             <strong>03</strong>
-            <span>Ưu tiên tư vấn trực tiếp qua Zalo/Facebook để giữ trải nghiệm cá nhân.</span>
+            <span>Không đánh đổi chất lượng để giảm giá thành.</span>
+          </div>
+          <div>
+            <strong>04</strong>
+            <span>Không hứa hẹn những điều không thể kiểm chứng.</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section season" id="season" aria-labelledby="season-title">
-      <div class="season-copy reveal">
-        <p class="eyebrow">Seasonal rhythm</p>
-        <h2 id="season-title">Không bán mọi thứ. Chỉ giới thiệu những gì đang vào mùa đẹp nhất.</h2>
-      </div>
-      <div class="season-board reveal">
-        <div><span>Musang King</span><b>Đặt lịch tư vấn</b></div>
-        <div><span>Bơ 034</span><b>Theo đợt vườn</b></div>
-        <div><span>Măng cụt</span><b>Chọn độ chín</b></div>
-        <div><span>Cà phê rang mộc</span><b>Có sẵn định kỳ</b></div>
+        <p class="commitment-copy">
+          Chúng tôi tin rằng niềm tin được xây dựng từ sự trung thực và chất lượng ổn định theo thời gian.
+        </p>
       </div>
     </section>
 
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-shell reveal">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Muốn biết vụ nào đang đẹp, hãy nhắn upifarm.</h2>
+          <p class="eyebrow">Hôm nay đang vào mùa gì?</p>
+          <h2 id="contact-title">Liên hệ trực tiếp để nhận thông tin mùa vụ hiện tại.</h2>
           <p>
-            Website này không xử lý thanh toán. Mọi đơn hàng và tư vấn chất lượng được trao đổi trực tiếp
-            để phù hợp từng mùa, từng sản phẩm và từng nhu cầu biếu tặng.
+            Upifarm tư vấn tình trạng sản phẩm, chất lượng thực tế và lựa chọn phù hợp với nhu cầu
+            sử dụng hoặc biếu tặng. Website không xử lý giỏ hàng và thanh toán trực tuyến.
           </p>
           <address class="business-info">
             <strong>Hộ kinh doanh Upifarm</strong>
@@ -1041,9 +338,9 @@ h3 {
             <span>Điện thoại: <a href="tel:0334338006">0334 338 006</a></span>
           </address>
         </div>
-        <div class="contact-actions">
+        <div class="contact-actions" aria-label="Kênh liên hệ Upifarm">
+          <a href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">Facebook</a>
           <a href="https://zalo.me/0334338006" target="_blank" rel="noopener">Zalo · 0334 338 006</a>
-          <a href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">Facebook · upifarm</a>
           <a href="tel:0334338006">Gọi trực tiếp</a>
         </div>
       </div>
@@ -1069,74 +366,6 @@ h3 {
     </p>
   </footer>
 
-  <script>
-const header = document.querySelector("[data-header]");
-const menuButton = document.querySelector(".menu-button");
-const nav = document.querySelector(".site-nav");
-const navLinks = document.querySelectorAll(".site-nav a");
-const revealItems = document.querySelectorAll(".reveal");
-const orbitItems = document.querySelectorAll(".hero-photo");
-
-const setHeaderState = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 10);
-};
-
-const closeMenu = () => {
-  nav?.classList.remove("is-open");
-  header?.classList.remove("is-open");
-  menuButton?.setAttribute("aria-expanded", "false");
-};
-
-setHeaderState();
-window.addEventListener("scroll", setHeaderState, { passive: true });
-
-menuButton?.addEventListener("click", () => {
-  const willOpen = !nav?.classList.contains("is-open");
-  nav?.classList.toggle("is-open", willOpen);
-  header?.classList.toggle("is-open", willOpen);
-  menuButton.setAttribute("aria-expanded", String(willOpen));
-});
-
-navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenu();
-});
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
-
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      const x = event.clientX / window.innerWidth - 0.5;
-      const y = event.clientY / window.innerHeight - 0.5;
-
-      orbitItems.forEach((item, index) => {
-        const depth = (index + 1) * 8;
-        item.style.transform = `translate3d(${x * depth}px, ${y * depth}px, 0)`;
-      });
-    },
-    { passive: true }
-  );
-}
-
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
