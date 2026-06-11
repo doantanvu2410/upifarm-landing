@@ -20,7 +20,7 @@ Premium static landing page for upifarm, a seasonal Vietnamese produce brand.
 - `index.html`
 - `style.css`
 - `script.js`
-- `assets/upifarm-mark.svg`
+- `assets/logo-upifarm.svg`
 - `robots.txt`
 - `sitemap.xml`
 - `_headers`

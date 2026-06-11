@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#11291f" />
+  <meta name="theme-color" content="#400193" />
 
   <title>upifarm - Nông sản tuyển chọn theo mùa</title>
   <meta
@@ -21,26 +21,26 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="vi_VN" />
 
-  <link rel="icon" href="assets/upifarm-mark.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/logo-upifarm.svg" type="image/svg+xml" />
   <style>
 :root {
-  --forest: #11291f;
-  --forest-2: #071812;
-  --leaf: #6f8f52;
-  --moss: #b8c58b;
-  --cream: #f5ead7;
+  --forest: #400193;
+  --forest-2: #16002d;
+  --leaf: #6a37c2;
+  --moss: #d7b8ff;
+  --cream: #fff1d6;
   --paper: #fffaf0;
-  --harvest: #d6a94a;
+  --harvest: #ffb200;
   --durian: #e7c75a;
   --avocado: #8aa35e;
   --mangosteen: #5b264d;
   --coffee: #5a3326;
-  --ink: #172019;
+  --ink: #21064a;
   --muted: rgba(245, 234, 215, 0.72);
-  --muted-dark: rgba(23, 32, 25, 0.68);
+  --muted-dark: rgba(33, 6, 74, 0.68);
   --line: rgba(245, 234, 215, 0.18);
-  --line-dark: rgba(23, 32, 25, 0.12);
-  --shadow: 0 30px 90px rgba(3, 13, 9, 0.34);
+  --line-dark: rgba(33, 6, 74, 0.12);
+  --shadow: 0 30px 90px rgba(22, 0, 45, 0.38);
   --max: 1180px;
 }
 
@@ -55,9 +55,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 18% 12%, rgba(214, 169, 74, 0.22), transparent 26rem),
-    radial-gradient(circle at 88% 4%, rgba(111, 143, 82, 0.2), transparent 22rem),
-    linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 58%, #040d09 100%);
+    radial-gradient(circle at 18% 12%, rgba(255, 178, 0, 0.26), transparent 26rem),
+    radial-gradient(circle at 88% 4%, rgba(106, 55, 194, 0.3), transparent 22rem),
+    linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 58%, #0b0017 100%);
   color: var(--cream);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
@@ -133,7 +133,7 @@ a {
 .site-header.is-scrolled::before,
 .site-header.is-open::before {
   border-color: var(--line);
-  background: rgba(7, 24, 18, 0.78);
+  background: rgba(22, 0, 45, 0.82);
   backdrop-filter: blur(18px);
 }
 
@@ -151,6 +151,8 @@ a {
 .brand img {
   width: 2.5rem;
   height: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
 }
 
 .menu-button {
@@ -191,7 +193,7 @@ a {
   gap: 0.2rem;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: rgba(7, 24, 18, 0.97);
+  background: rgba(22, 0, 45, 0.97);
   box-shadow: var(--shadow);
   padding: 0.8rem;
   opacity: 0;
@@ -339,7 +341,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 34px;
   background:
-    radial-gradient(circle at 25% 24%, rgba(214, 169, 74, 0.25), transparent 22rem),
+    radial-gradient(circle at 25% 24%, rgba(255, 178, 0, 0.28), transparent 22rem),
+    radial-gradient(circle at 80% 72%, rgba(106, 55, 194, 0.3), transparent 20rem),
     linear-gradient(145deg, rgba(245, 234, 215, 0.12), rgba(245, 234, 215, 0.04));
   box-shadow: var(--shadow);
 }
@@ -378,7 +381,7 @@ h3 {
   width: min(80%, 21rem);
   border: 1px solid rgba(245, 234, 215, 0.25);
   border-radius: 28px;
-  background: rgba(7, 24, 18, 0.74);
+  background: rgba(22, 0, 45, 0.76);
   padding: 1.4rem;
   backdrop-filter: blur(14px);
 }
@@ -386,7 +389,9 @@ h3 {
 .hero-card img {
   width: 5.2rem;
   height: 5.2rem;
+  border-radius: 22px;
   margin-bottom: 3.5rem;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
 }
 
 .hero-card span {
@@ -493,7 +498,7 @@ h3 {
   bottom: 0.8rem;
   border: 1px solid rgba(245, 234, 215, 0.18);
   border-radius: 999px;
-  background: rgba(7, 24, 18, 0.66);
+  background: rgba(22, 0, 45, 0.68);
   color: rgba(245, 234, 215, 0.82);
   padding: 0.35rem 0.55rem;
   font-size: 0.66rem;
@@ -528,7 +533,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 34px;
   background:
-    radial-gradient(circle at 84% 12%, rgba(214, 169, 74, 0.18), transparent 22rem),
+    radial-gradient(circle at 84% 12%, rgba(255, 178, 0, 0.2), transparent 22rem),
+    radial-gradient(circle at 16% 90%, rgba(106, 55, 194, 0.22), transparent 20rem),
     rgba(245, 234, 215, 0.07);
   box-shadow: var(--shadow);
   padding: clamp(1.35rem, 5vw, 3.25rem);
@@ -597,6 +603,28 @@ h3 {
   max-width: 42rem;
 }
 
+.business-info {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1.6rem;
+  border-left: 2px solid var(--harvest);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.business-info strong {
+  color: var(--cream);
+  font-size: 1.02rem;
+}
+
+.business-info a {
+  color: var(--cream);
+  font-weight: 850;
+  text-decoration-color: rgba(255, 178, 0, 0.6);
+  text-underline-offset: 0.18rem;
+}
+
 .contact-actions {
   display: grid;
   gap: 0.75rem;
@@ -648,6 +676,13 @@ h3 {
 .site-footer p {
   margin: 0;
   color: var(--muted);
+}
+
+.site-footer a:not(.brand) {
+  color: var(--cream);
+  font-weight: 820;
+  text-decoration-color: rgba(255, 178, 0, 0.55);
+  text-underline-offset: 0.18rem;
 }
 
 .reveal {
@@ -756,6 +791,26 @@ h3 {
 }
 
 </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hộ kinh doanh Upifarm",
+      "url": "https://upifarm.com/",
+      "telephone": "+84334338006",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Thôn Đắk Wí, Xã Đắk Nhau",
+        "addressLocality": "Thành phố Đồng Nai",
+        "addressCountry": "VN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/upifarm",
+        "https://zalo.me/0334338006"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -763,7 +818,7 @@ h3 {
 
   <header class="site-header" data-header>
     <a class="brand" href="#home" aria-label="upifarm home">
-      <img src="assets/upifarm-mark.svg" alt="" width="44" height="44" />
+      <img src="assets/logo-upifarm.svg" alt="" width="44" height="44" />
       <span>upifarm</span>
     </a>
 
@@ -792,7 +847,7 @@ h3 {
           câu chuyện rõ ràng và tư vấn trực tiếp.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://zalo.me/0334538006" target="_blank" rel="noopener">Nhắn Zalo</a>
+          <a class="button button-primary" href="https://zalo.me/0334338006" target="_blank" rel="noopener">Nhắn Zalo</a>
           <a class="button button-secondary" href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
@@ -824,7 +879,7 @@ h3 {
             loading="eager"
           />
           <div class="hero-card">
-            <img src="assets/upifarm-mark.svg" alt="upifarm" width="110" height="110" />
+            <img src="assets/logo-upifarm.svg" alt="Logo upifarm" width="110" height="110" />
             <span>Selected by season</span>
             <strong>Musang King · Bơ 034 · Măng cụt · Cà phê rang mộc</strong>
           </div>
@@ -849,8 +904,8 @@ h3 {
             Ít thông tin nhưng đúng trọng tâm: sản phẩm gì, vì sao đáng tin, liên hệ ở đâu.
           </p>
           <p>
-            Hệ thiết kế chọn nền xanh rừng trầm, kem giấy, vàng trái chín và nâu cà phê:
-            sang hơn màu nông sản phổ thông, nhưng vẫn ấm và gần đất.
+            Hệ thiết kế phát triển từ logo Upifarm: tím thương hiệu, vàng nhận diện,
+            kem giấy và các sắc nông sản tự nhiên. Sắc thái đủ sang, nhưng vẫn ấm và gần đất.
           </p>
         </div>
       </div>
@@ -980,11 +1035,16 @@ h3 {
             Website này không xử lý thanh toán. Mọi đơn hàng và tư vấn chất lượng được trao đổi trực tiếp
             để phù hợp từng mùa, từng sản phẩm và từng nhu cầu biếu tặng.
           </p>
+          <address class="business-info">
+            <strong>Hộ kinh doanh Upifarm</strong>
+            <span>Thôn Đắk Wí, Xã Đắk Nhau, Thành phố Đồng Nai</span>
+            <span>Điện thoại: <a href="tel:0334338006">0334 338 006</a></span>
+          </address>
         </div>
         <div class="contact-actions">
-          <a href="https://zalo.me/0334538006" target="_blank" rel="noopener">Zalo · 0334 538 006</a>
+          <a href="https://zalo.me/0334338006" target="_blank" rel="noopener">Zalo · 0334 338 006</a>
           <a href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">Facebook · upifarm</a>
-          <a href="tel:0334538006">Gọi trực tiếp</a>
+          <a href="tel:0334338006">Gọi trực tiếp</a>
         </div>
       </div>
     </section>
@@ -1000,10 +1060,13 @@ h3 {
 
   <footer class="site-footer">
     <a class="brand" href="#home" aria-label="Về đầu trang">
-      <img src="assets/upifarm-mark.svg" alt="" width="40" height="40" />
+      <img src="assets/logo-upifarm.svg" alt="" width="40" height="40" />
       <span>upifarm</span>
     </a>
-    <p>Nông sản tuyển chọn theo mùa. Không bán hàng trực tuyến.</p>
+    <p>
+      Hộ kinh doanh Upifarm · Thôn Đắk Wí, Xã Đắk Nhau, Thành phố Đồng Nai ·
+      <a href="tel:0334338006">0334 338 006</a>
+    </p>
   </footer>
 
   <script>
