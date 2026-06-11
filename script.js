@@ -3,7 +3,7 @@ const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const revealItems = document.querySelectorAll(".reveal");
-const orbitItems = document.querySelectorAll(".hero-photo");
+const orbitItems = document.querySelectorAll(".hero-orbit");
 
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 10);
