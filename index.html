@@ -1,142 +1,187 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>upifarm</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial,sans-serif;
-background:#F7F2E8;
-color:#2B2118;
-line-height:1.6;
-}
-
-header{
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:32px;
-font-weight:700;
-}
-
-.hero{
-min-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-
-.hero h1{
-font-size:56px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:700px;
-font-size:20px;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-background:#D9A441;
-color:white;
-text-decoration:none;
-border-radius:999px;
-margin:10px;
-}
-
-section{
-padding:80px 8%;
-}
-
-.card{
-background:white;
-padding:24px;
-border-radius:20px;
-margin-top:20px;
-}
-
-footer{
-padding:40px;
-text-align:center;
-background:#2B2118;
-color:white;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>upifarm - Sạch từ vườn, vươn giá trị</title>
+  <meta name="description" content="upifarm là landing page thương hiệu nông sản Việt: cà phê Robusta, sầu riêng Musang King và nông sản theo mùa." />
+  <meta property="og:title" content="upifarm - Sạch từ vườn, vươn giá trị" />
+  <meta property="og:description" content="Tuyển chọn cà phê, sầu riêng và nông sản chất lượng từ vườn Việt." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="logo" href="#home">upifarm<span></span></a>
+    <button class="menu-toggle" aria-label="Mở menu">☰</button>
+    <nav class="nav">
+      <a href="#about">Về upifarm</a>
+      <a href="#products">Sản phẩm</a>
+      <a href="#values">Giá trị</a>
+      <a href="#story">Câu chuyện</a>
+      <a href="#contact" class="nav-cta">Liên hệ</a>
+    </nav>
+  </header>
 
-<header>
-<div class="logo">upifarm</div>
-</header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Nông sản Việt tử tế</p>
+        <h1>Sạch từ vườn,<br />vươn giá trị</h1>
+        <p class="lead">
+          upifarm tuyển chọn cà phê, sầu riêng và nông sản chất lượng từ vườn Việt.
+          Website chỉ để giới thiệu thương hiệu, khách liên hệ trực tiếp qua Facebook, Zalo hoặc điện thoại.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-dark">Liên hệ ngay</a>
+          <a href="https://www.facebook.com/upifarm" class="btn btn-gold" target="_blank" rel="noopener">Xem Facebook</a>
+        </div>
+      </div>
 
-<section class="hero">
-<h1>Sạch từ vườn, vươn giá trị</h1>
-<p>
-upifarm tuyển chọn cà phê, sầu riêng và nông sản chất lượng từ vườn Việt.
-</p>
+      <div class="hero-visual">
+        <div class="visual-card coffee-pack">
+          <div class="pack-logo">upi</div>
+          <p>cà phê rang xay</p>
+          <strong>ROBUSTA</strong>
+          <small>đậm đà · mạnh mẽ · hậu vị dài</small>
+        </div>
+        <div class="floating-note note-one">100% cà phê nguyên chất</div>
+        <div class="floating-note note-two">Musang King tuyển chọn</div>
+      </div>
+    </section>
 
-<div>
-<a href="https://www.facebook.com/upifarm" class="btn">Facebook</a>
-<a href="#" class="btn">Zalo</a>
-</div>
-</section>
+    <section class="intro-strip">
+      <div>
+        <strong>Không chạy theo số lượng.</strong>
+        <span>upifarm tập trung vào sản phẩm có nguồn gốc rõ, hình ảnh chỉn chu và trải nghiệm đáng tin.</span>
+      </div>
+    </section>
 
-<section>
-<h2>Về upifarm</h2>
+    <section id="about" class="section two-col">
+      <div>
+        <p class="eyebrow">Về upifarm</p>
+        <h2>Thương hiệu nhỏ, làm cho rõ ràng.</h2>
+      </div>
+      <div>
+        <p>
+          upifarm là thương hiệu nông sản Việt hướng đến sự sạch, minh bạch và chỉn chu trong từng sản phẩm.
+          Từ cà phê Robusta, sầu riêng Musang King đến nông sản theo mùa, upifarm ưu tiên chất lượng thực tế,
+          bao bì gọn đẹp và cách giao tiếp thẳng thắn với khách hàng.
+        </p>
+      </div>
+    </section>
 
-<div class="card">
-upifarm là thương hiệu nông sản Việt tập trung vào chất lượng, nguồn gốc rõ ràng và trải nghiệm khách hàng.
-</div>
-</section>
+    <section id="products" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Sản phẩm nổi bật</p>
+        <h2>Nông sản được chọn lọc theo mùa.</h2>
+      </div>
 
-<section>
-<h2>Sản phẩm</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-img coffee-bg">☕</div>
+          <div class="product-body">
+            <h3>Cà phê rang xay Robusta</h3>
+            <p>Đậm đà, mạnh mẽ, hậu vị dài. Phù hợp pha phin và gu cà phê Việt.</p>
+          </div>
+        </article>
 
-<div class="card">
-☕ Cà phê rang xay Robusta
-</div>
+        <article class="product-card">
+          <div class="product-img durian-bg">🌰</div>
+          <div class="product-body">
+            <h3>Sầu riêng Musang King</h3>
+            <p>Hàng tuyển chọn từ vườn, cơm vàng, vị béo đậm đặc trưng.</p>
+          </div>
+        </article>
 
-<div class="card">
-🌰 Sầu riêng Musang King
-</div>
+        <article class="product-card">
+          <div class="product-img farm-bg">🌱</div>
+          <div class="product-body">
+            <h3>Nông sản theo mùa</h3>
+            <p>Tuyển chọn theo mùa vụ, ưu tiên chất lượng và nguồn gốc rõ ràng.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<div class="card">
-🌱 Nông sản theo mùa
-</div>
-</section>
+    <section id="values" class="section values">
+      <div class="section-head">
+        <p class="eyebrow">Vì sao chọn upifarm?</p>
+        <h2>Ít thứ hơn, nhưng làm kỹ hơn.</h2>
+      </div>
 
-<section>
-<h2>Liên hệ</h2>
+      <div class="value-grid">
+        <div class="value-item">
+          <span>01</span>
+          <h3>Tuyển chọn từ vườn</h3>
+          <p>Ưu tiên nguồn hàng có chất lượng ổn định và câu chuyện rõ ràng.</p>
+        </div>
+        <div class="value-item">
+          <span>02</span>
+          <h3>Minh bạch nguồn gốc</h3>
+          <p>Thông tin sản phẩm ngắn gọn, dễ hiểu, không thổi phồng.</p>
+        </div>
+        <div class="value-item">
+          <span>03</span>
+          <h3>Đóng gói chỉn chu</h3>
+          <p>Bao bì, nhãn dán và hình ảnh được làm sạch, gọn, đáng tin.</p>
+        </div>
+        <div class="value-item">
+          <span>04</span>
+          <h3>Liên hệ nhanh</h3>
+          <p>Không giỏ hàng rườm rà. Khách nhắn Facebook/Zalo để hỏi sản phẩm hiện có.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-SĐT: 0334 538 006<br>
-Website: upifarm.com<br>
-Facebook: facebook.com/upifarm
-</div>
-</section>
+    <section id="story" class="story-section">
+      <div class="story-card">
+        <p class="eyebrow">Câu chuyện thương hiệu</p>
+        <h2>Từ vườn đến thương hiệu.</h2>
+        <p>
+          upifarm không chỉ bán nông sản. upifarm muốn nâng giá trị nông sản Việt bằng cách làm thương hiệu tử tế:
+          sản phẩm rõ ràng, hình ảnh sạch, bao bì có gu và trải nghiệm khách hàng đáng tin.
+        </p>
+      </div>
+    </section>
 
-<footer>
-upifarm © 2026
-</footer>
+    <section class="section gallery">
+      <div class="section-head">
+        <p class="eyebrow">Hình ảnh định hướng</p>
+        <h2>Thật, sạch, có cảm giác từ vườn.</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-box">Vườn</div>
+        <div class="gallery-box">Cà phê</div>
+        <div class="gallery-box">Sầu riêng</div>
+        <div class="gallery-box">Đóng gói</div>
+      </div>
+    </section>
 
+    <section id="contact" class="contact-section">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Liên hệ</p>
+          <h2>Nhắn upifarm để biết sản phẩm hiện có.</h2>
+          <p>Giá và sản phẩm có thể thay đổi theo mùa vụ. Website không bán hàng trực tiếp.</p>
+        </div>
+
+        <div class="contact-list">
+          <a href="tel:0334538006">0334 538 006</a>
+          <a href="https://www.facebook.com/upifarm" target="_blank" rel="noopener">facebook.com/upifarm</a>
+          <span>upifarm.com</span>
+          <span>Zalo: cập nhật sau</span>
+          <span>Địa chỉ: Thôn Đắk Nhau, xã Đắk Nhau, tỉnh Đồng Nai</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>upifarm</strong>
+    <span>Sạch từ vườn, vươn giá trị</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
