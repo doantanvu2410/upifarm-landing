@@ -226,6 +226,11 @@ a {
   margin: 0 auto;
 }
 
+.hero[id],
+.section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 .hero {
   display: grid;
   gap: 2.5rem;
