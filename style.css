@@ -136,6 +136,7 @@ a {
 }
 
 .menu-button {
+  position: relative;
   display: inline-grid;
   place-items: center;
   width: 2.75rem;
@@ -147,23 +148,31 @@ a {
 }
 
 .menu-button span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 1.12rem;
   height: 2px;
   border-radius: 999px;
   background: var(--cream);
-  transition: transform 0.2s ease;
+  transform-origin: center;
+  transition: transform 0.22s ease;
 }
 
-.menu-button span + span {
-  margin-top: -0.55rem;
+.menu-button span:first-child {
+  transform: translate(-50%, calc(-50% - 0.23rem));
+}
+
+.menu-button span:last-child {
+  transform: translate(-50%, calc(-50% + 0.23rem));
 }
 
 .menu-button[aria-expanded="true"] span:first-child {
-  transform: translateY(0.28rem) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .menu-button[aria-expanded="true"] span:last-child {
-  transform: translateY(-0.28rem) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .site-nav {
