@@ -1,8 +1,8 @@
 :root {
-  --forest: #21064a;
+  --forest: #400193;
   --forest-deep: #16002d;
-  --moss: #400193;
-  --sage: #f5a623;
+  --moss: #21064a;
+  --sage: #ffb200;
   --earth: #8b2f1b;
   --clay: #f5a623;
   --ivory: #fff1d6;
@@ -28,9 +28,10 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 12% 0%, rgba(245, 166, 35, 0.26), transparent 28rem),
-    linear-gradient(180deg, var(--ivory) 0%, #fff8ea 48%, #f4e4c6 100%);
-  color: var(--ink);
+    radial-gradient(circle at 14% 4%, rgba(255, 178, 0, 0.24), transparent 25rem),
+    radial-gradient(circle at 88% 12%, rgba(255, 241, 214, 0.12), transparent 28rem),
+    linear-gradient(180deg, var(--forest) 0%, var(--moss) 42%, var(--forest-deep) 100%);
+  color: var(--ivory);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
@@ -44,8 +45,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(33, 6, 74, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 6, 74, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(255, 241, 214, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 241, 214, 0.04) 1px, transparent 1px);
   background-size: 86px 86px;
   mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
 }
@@ -89,26 +90,36 @@ a {
   gap: 0.8rem;
   width: min(100% - 1.35rem, 1120px);
   margin: 0 auto;
-  border: 1px solid rgba(255, 250, 240, 0.68);
+  border: 1px solid rgba(255, 241, 214, 0.2);
   border-radius: 999px;
-  background: rgba(251, 246, 234, 0.78);
-  box-shadow: 0 18px 54px rgba(22, 0, 45, 0.13);
+  background: rgba(22, 0, 45, 0.64);
+  box-shadow: 0 18px 54px rgba(22, 0, 45, 0.28);
   padding: 0.5rem 0.56rem 0.5rem 0.9rem;
   backdrop-filter: blur(20px);
 }
 
 .site-header.is-scrolled,
 .site-header.is-open {
-  background: rgba(251, 246, 234, 0.94);
-  border-color: rgba(33, 6, 74, 0.12);
+  background: rgba(22, 0, 45, 0.9);
+  border-color: rgba(255, 241, 214, 0.18);
 }
 
 .wordmark {
-  color: var(--forest);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.62rem;
+  color: var(--ivory);
   font-size: 1.08rem;
   font-weight: 850;
   letter-spacing: -0.035em;
   text-decoration: none;
+}
+
+.wordmark img {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 13px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
 .menu-button {
@@ -117,9 +128,9 @@ a {
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid rgba(33, 6, 74, 0.16);
+  border: 1px solid rgba(255, 241, 214, 0.18);
   border-radius: 999px;
-  background: rgba(33, 6, 74, 0.08);
+  background: rgba(255, 241, 214, 0.08);
   cursor: pointer;
 }
 
@@ -130,7 +141,7 @@ a {
   width: 1.12rem;
   height: 2px;
   border-radius: 999px;
-  background: var(--forest);
+  background: var(--ivory);
   transform-origin: center;
   transition: transform 0.22s ease;
 }
@@ -156,9 +167,9 @@ a {
   inset: 5.25rem 1rem auto;
   display: grid;
   gap: 0.18rem;
-  border: 1px solid rgba(33, 6, 74, 0.12);
+  border: 1px solid rgba(255, 241, 214, 0.14);
   border-radius: 24px;
-  background: rgba(251, 246, 234, 0.98);
+  background: rgba(22, 0, 45, 0.98);
   box-shadow: var(--shadow);
   padding: 0.8rem;
   opacity: 0;
@@ -175,7 +186,7 @@ a {
 
 .site-nav a {
   border-radius: 999px;
-  color: rgba(33, 6, 74, 0.74);
+  color: rgba(255, 241, 214, 0.78);
   padding: 0.78rem 0.95rem;
   font-size: 0.9rem;
   font-weight: 720;
@@ -185,13 +196,13 @@ a {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  background: rgba(33, 6, 74, 0.08);
-  color: var(--forest);
+  background: rgba(255, 241, 214, 0.1);
+  color: var(--ivory);
 }
 
 .site-nav .nav-action {
-  background: var(--forest);
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--forest);
 }
 
 .hero,
@@ -217,7 +228,7 @@ a {
 .eyebrow,
 .section-label {
   margin: 0 0 1rem;
-  color: var(--earth);
+  color: var(--sage);
   font-size: 0.74rem;
   font-weight: 850;
   letter-spacing: 0.16em;
@@ -240,25 +251,25 @@ h3 {
 
 h1 {
   margin: 0 0 0.85rem;
-  color: var(--forest);
+  color: var(--ivory);
   font-size: clamp(4.8rem, 18vw, 11rem);
 }
 
 h2 {
   margin-bottom: 1rem;
-  color: var(--forest);
+  color: var(--ivory);
   font-size: clamp(2.4rem, 7.6vw, 5.25rem);
 }
 
 h3 {
   margin-bottom: 0.68rem;
-  color: var(--forest);
+  color: var(--ivory);
   font-size: clamp(1.35rem, 3.5vw, 2rem);
 }
 
 .hero-subtitle {
   margin-bottom: 1rem;
-  color: var(--earth);
+  color: var(--sage);
   font-size: clamp(1.3rem, 3.4vw, 2.2rem);
   font-weight: 760;
   letter-spacing: -0.04em;
@@ -271,12 +282,20 @@ h3 {
 .journal-card p,
 .vision-panel p,
 .cta-panel p {
-  color: var(--muted);
+  color: rgba(255, 241, 214, 0.76);
   font-size: clamp(1rem, 2.2vw, 1.18rem);
 }
 
 .hero-copy {
   max-width: 40rem;
+}
+
+.hero-logo {
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 24px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
 }
 
 .hero-actions,
@@ -304,14 +323,14 @@ h3 {
 }
 
 .button-primary {
-  background: var(--forest);
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--forest);
 }
 
 .button-secondary {
-  border: 1px solid rgba(33, 6, 74, 0.18);
-  background: rgba(255, 250, 240, 0.68);
-  color: var(--forest);
+  border: 1px solid rgba(255, 241, 214, 0.22);
+  background: rgba(255, 241, 214, 0.08);
+  color: var(--ivory);
 }
 
 .hero-media {
@@ -321,6 +340,7 @@ h3 {
   border-radius: 34px;
   box-shadow: var(--shadow);
   background: var(--sage);
+  border: 1px solid rgba(255, 241, 214, 0.16);
 }
 
 .hero-media img {
@@ -386,6 +406,15 @@ h3 {
   gap: 2rem;
 }
 
+.about,
+.philosophy,
+.journey,
+.gallery,
+.journal,
+.final-cta {
+  color: var(--ivory);
+}
+
 .copy-stack {
   display: grid;
   gap: 1rem;
@@ -396,7 +425,7 @@ h3 {
 }
 
 .copy-stack p:first-child {
-  color: var(--forest);
+  color: var(--ivory);
   font-size: clamp(1.4rem, 4vw, 2.5rem);
   letter-spacing: -0.045em;
   line-height: 1.08;
@@ -412,10 +441,10 @@ h3 {
 .journal-card,
 .vision-panel,
 .cta-panel {
-  border: 1px solid rgba(33, 6, 74, 0.12);
+  border: 1px solid rgba(255, 241, 214, 0.16);
   border-radius: 28px;
-  background: rgba(255, 250, 240, 0.62);
-  box-shadow: 0 22px 70px rgba(22, 0, 45, 0.08);
+  background: rgba(255, 241, 214, 0.08);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.16);
   padding: clamp(1.2rem, 3vw, 1.8rem);
 }
 
@@ -429,7 +458,7 @@ h3 {
 .philosophy-card span,
 .timeline-item span,
 .journal-card span {
-  color: var(--earth);
+  color: var(--sage);
   font-size: 0.74rem;
   font-weight: 850;
   letter-spacing: 0.13em;
@@ -449,16 +478,16 @@ h3 {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: rgba(33, 6, 74, 0.15);
+  background: rgba(255, 241, 214, 0.18);
 }
 
 .timeline-item {
   position: relative;
   display: grid;
   gap: 0.5rem;
-  border: 1px solid rgba(33, 6, 74, 0.12);
+  border: 1px solid rgba(255, 241, 214, 0.16);
   border-radius: 26px;
-  background: rgba(255, 250, 240, 0.64);
+  background: rgba(255, 241, 214, 0.08);
   padding: 1.15rem 1.15rem 1.15rem 3.2rem;
 }
 
@@ -469,10 +498,10 @@ h3 {
   top: 1.35rem;
   width: 0.7rem;
   height: 0.7rem;
-  border: 3px solid var(--ivory);
+  border: 3px solid var(--forest-deep);
   border-radius: 999px;
-  background: var(--forest);
-  box-shadow: 0 0 0 1px rgba(33, 6, 74, 0.18);
+  background: var(--sage);
+  box-shadow: 0 0 0 1px rgba(255, 241, 214, 0.2);
 }
 
 .gallery-grid {
@@ -535,7 +564,7 @@ h3 {
 
 .journal-card a {
   width: max-content;
-  color: var(--forest);
+  color: var(--sage);
   font-weight: 800;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22rem;
@@ -546,7 +575,7 @@ h3 {
   gap: 1rem;
   background:
     radial-gradient(circle at 88% 18%, rgba(245, 166, 35, 0.24), transparent 22rem),
-    var(--forest);
+    rgba(255, 241, 214, 0.08);
   color: var(--ivory);
 }
 
@@ -569,9 +598,9 @@ h3 {
 .site-footer {
   display: grid;
   gap: 1rem;
-  border-top: 1px solid rgba(33, 6, 74, 0.14);
+  border-top: 1px solid rgba(255, 241, 214, 0.16);
   padding: 2rem 0;
-  color: var(--muted);
+  color: rgba(255, 241, 214, 0.72);
 }
 
 .site-footer p,
@@ -586,7 +615,7 @@ h3 {
 }
 
 .footer-links a {
-  color: var(--forest);
+  color: var(--sage);
   font-weight: 760;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22rem;
