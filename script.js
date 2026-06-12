@@ -3,7 +3,8 @@ const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const revealItems = document.querySelectorAll(".reveal");
-const orbitItems = document.querySelectorAll(".hero-orbit");
+const slides = [...document.querySelectorAll("[data-slide]")];
+const slideControls = [...document.querySelectorAll("[data-slide-control]")];
 
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 10);
@@ -49,18 +50,35 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      const x = event.clientX / window.innerWidth - 0.5;
-      const y = event.clientY / window.innerHeight - 0.5;
+let activeSlide = 0;
+let slideTimer;
 
-      orbitItems.forEach((item, index) => {
-        const depth = (index + 1) * 8;
-        item.style.transform = `translate3d(${x * depth}px, ${y * depth}px, 0)`;
-      });
-    },
-    { passive: true }
-  );
-}
+const setSlide = (index) => {
+  if (!slides.length) return;
+
+  activeSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === activeSlide);
+  });
+
+  slideControls.forEach((control, controlIndex) => {
+    control.classList.toggle("is-active", controlIndex === activeSlide);
+  });
+};
+
+const startSlider = () => {
+  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.clearInterval(slideTimer);
+  slideTimer = window.setInterval(() => setSlide(activeSlide + 1), 4200);
+};
+
+slideControls.forEach((control) => {
+  control.addEventListener("click", () => {
+    setSlide(Number(control.dataset.slideControl || 0));
+    startSlider();
+  });
+});
+
+setSlide(0);
+startSlider();
