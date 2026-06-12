@@ -306,7 +306,7 @@ h3 {
 }
 
 .button-primary,
-.contact-box a:last-child {
+.contact-link-primary {
   background: var(--paper);
   color: var(--brand);
 }
