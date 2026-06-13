@@ -252,7 +252,7 @@ h3 {
 h1 {
   margin: 0 0 0.85rem;
   color: var(--ivory);
-  font-size: clamp(4.2rem, 13vw, 8.6rem);
+  font-size: clamp(4.2rem, 12vw, 7.6rem);
 }
 
 h2 {
@@ -351,6 +351,7 @@ h3 {
   height: 100%;
   min-height: inherit;
   object-fit: cover;
+  object-position: 54% 50%;
   filter: saturate(0.82) contrast(0.96);
 }
 
@@ -680,9 +681,13 @@ h3 {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(24rem, 31rem);
-    column-gap: clamp(3rem, 7vw, 6rem);
+    grid-template-columns: minmax(0, 1fr) minmax(23rem, 30rem);
+    column-gap: clamp(4rem, 8vw, 7rem);
     padding-top: 8.2rem;
+  }
+
+  h1 {
+    font-size: clamp(5.6rem, 8.2vw, 7.25rem);
   }
 
   .hero-media {
